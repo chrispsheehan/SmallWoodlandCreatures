@@ -2,6 +2,25 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "buildCreatureBuilder",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/SmallWoodlandCreatureBuilder/SmallWoodlandCreatureBuilder.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },  
+        {
+            "label": "buildCreatures",
+            "dependsOn": "buildCreatureBuilder",            
+            "command": "${workspaceFolder}/src/SmallWoodlandCreatureBuilder/bin/Debug/netcoreapp3.1/SmallWoodlandCreatureBuilder.exe",
+            "type": "process",
+            "problemMatcher": "$msCompile"            
+        },             
+        {
             "label": "build",
             "command": "dotnet",
             "type": "process",
