@@ -56,6 +56,19 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
-        }
+        },
+        {
+            "label": "startapi",
+            "command": "dotnet run", 
+            "dependsOn": "build",                         
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src/SmallWoodlandCreaturesApi/"
+            },             
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"
+        }       
     ]
 }
