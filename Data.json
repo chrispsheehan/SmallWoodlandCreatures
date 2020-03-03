@@ -1,0 +1,7 @@
+[
+  {"name":"Badger", "IsScary":true},
+  {"name":"Dog", "IsScary":false},
+  {"name":"Rat", "IsScary":true},
+  {"name":"Mouse", "IsScary":false},
+  {"name":"Squirrel", "IsScary":true}
+]
