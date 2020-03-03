@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-using Newtonsoft.Json;
 using RestSharp;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace SmallWoodlandCreatureBuilder
 {
@@ -13,9 +11,9 @@ namespace SmallWoodlandCreatureBuilder
 
         static void Main(string[] args)
         {
-            var json = System.IO.File.ReadAllText(filePath);
+            Console.WriteLine($"Loading critters from {filePath}");
 
-            Console.Write(json);
+            var json = System.IO.File.ReadAllText(filePath);
 
             dynamic objects = JsonConvert.DeserializeObject<List<CreatureInput>>(json);
 
@@ -27,11 +25,9 @@ namespace SmallWoodlandCreatureBuilder
             {
                 IRestRequest request = new RestRequest("/Creatures", Method.POST);
 
-                Console.WriteLine(creature.Name);
+                Console.WriteLine($"Found {creature.Name}...");
 
                 string postString = JsonConvert.SerializeObject(creature).ToString();
-
-                Console.WriteLine(postString);
 
                 request.AddParameter("application/json", postString, ParameterType.RequestBody);;
 
