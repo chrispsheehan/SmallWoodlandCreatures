@@ -15,9 +15,15 @@
         },  
         {
             "label": "buildCreatures",
-            "dependsOn": "buildCreatureBuilder",            
-            "command": "${workspaceFolder}/src/SmallWoodlandCreatureBuilder/bin/Debug/netcoreapp3.1/SmallWoodlandCreatureBuilder.exe",
+            "dependsOn": "buildCreatureBuilder",
+            "options": {
+                "cwd": "${workspaceFolder}/src/SmallWoodlandCreatureBuilder"
+            },                        
+            "command": "dotnet",
             "type": "process",
+            "args": [
+                "run"
+            ],            
             "problemMatcher": "$msCompile"            
         },             
         {

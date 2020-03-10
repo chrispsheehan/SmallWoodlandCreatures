@@ -7,7 +7,7 @@ namespace SmallWoodlandCreatureBuilder
 {
     class Program
     {
-        private const string filePath = "C:\\Git\\ChrisPSheehan\\SmallWoodlandCreatures\\Data.json";
+        private const string filePath = "../../Data.json";
 
         static void Main(string[] args)
         {
